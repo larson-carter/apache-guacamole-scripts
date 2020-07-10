@@ -38,7 +38,7 @@ else
         read -s -p "Confirm the fqdn for your domain: " certbotfqdn2
         echo
         [ "$certbotfqdn" = "$certbotfqdn2" ] && break
-        echo "Passwords don't match. Please try again."
+        echo "FQDN don't match. Please try again."
         echo
     done
     echo
@@ -49,7 +49,7 @@ else
         read -s -p "Confirm your email address: " certbotemail2
         echo
         [ "$certbotemail" = "$certbotemail2" ] && break
-        echo "Passwords don't match. Please try again."
+        echo "Email addresses don't match. Please try again."
         echo
     done
     echo
