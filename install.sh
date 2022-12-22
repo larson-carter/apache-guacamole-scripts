@@ -15,11 +15,11 @@ fi
 
 # Version number of Guacamole to install
 # Homepage ~ https://guacamole.apache.org/releases/
-GUACVERSION="1.2.0"
+GUACVERSION="1.4.0"
 
 # Latest Version of MySQL Connector/J if manual install is required (if libmariadb-java/libmysql-java is not available via apt)
 # Homepage ~ https://dev.mysql.com/downloads/connector/j/
-MCJVER="8.0.19"
+MCJVER="8.0.31"
 
 # Colors to use for output
 YELLOW='\033[1;33m'
@@ -293,7 +293,8 @@ else
 fi
 
 # Uncomment to manually force a Tomcat version
-#TOMCAT=""
+# Comment to manually install a specific version
+TOMCAT="10.1.4"
 
 # Install features
 echo -e "${BLUE}Installing packages. This might take a few minutes...${NC}"
