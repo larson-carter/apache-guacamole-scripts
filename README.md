@@ -2,6 +2,20 @@
 
 ## To Use
 
+## Notes
+
+This was built to be ran on Ubuntu 22.04.1 LTS
+
+### Setup UFW Firewall
+
+`git clone https://github.com/larson-carter/apache-guacamole-scripts`
+
+`cd apache-guacamole-scripts`
+
+`chmod a+x ufw.sh`
+
+`sudo ./ufw.sh`
+
 ### Setup Guacamole Server
 
 `git clone https://github.com/larson-carter/apache-guacamole-scripts`
