@@ -302,11 +302,28 @@ echo -e "${BLUE}Installing packages. This might take a few minutes...${NC}"
 # Don't prompt during install
 export DEBIAN_FRONTEND=noninteractive
 
+# Fix Ubuntu 22.04 SSL Issue
+sudo apt purge openssl -y
+wget https://www.openssl.org/source/old/1.1.1/openssl-1.1.1q.tar.gz --no-check-certificate -P ~
+sudo tar -zxf openssl-1.1.1q.tar.gz
+cd ~/openssl-1.1.1q
+sudo ./config
+sudo make
+sudo make install
+sudo cp /usr/local/bin/openssl /usr/bin
+sudo ldconfig
+
 # Required packages
 apt-get -y install build-essential libcairo2-dev ${JPEGTURBO} ${LIBPNG} libossp-uuid-dev libavcodec-dev libavformat-dev libavutil-dev \
 libswscale-dev freerdp2-dev libpango1.0-dev libssh2-1-dev libtelnet-dev libvncserver-dev libpulse-dev libssl-dev \
 libvorbis-dev libwebp-dev libwebsockets-dev freerdp2-x11 libtool-bin ghostscript dpkg-dev wget crudini \
+gcc nano vim curl g++ libjpeg-turbo8-dev \
 ${MYSQL} ${LIBJAVA} ${TOMCAT} &>> ${LOG}
+
+# Install FreeRDP2
+sudo add-apt-repository ppa:remmina-ppa-team/remmina-next-daily
+sudo apt update
+sudo apt install freerdp2-dev freerdp2-x11 -y
 
 # If apt fails to run completely the rest of this isn't going to work...
 if [ $? -ne 0 ]; then
