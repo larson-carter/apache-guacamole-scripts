@@ -384,7 +384,7 @@ fi
 # Deal with missing MySQL Connector/J
 if [[ -z $LIBJAVA ]]; then
     # Download MySQL Connector/J
-    wget -q --show-progress -O mysql-connector-java-${MCJVER}.tar.gz https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MCJVER}.tar.gz
+    wget -q --show-progress -O mysql-connector-java-${MCJVER}.tar.gz https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-${MCJVER}.tar.gz
     if [ $? -ne 0 ]; then
         echo -e "${RED}Failed to download mysql-connector-java-${MCJVER}.tar.gz" 1>&2
         echo -e "https://dev.mysql.com/get/Downloads/Connector-J/mysql-connector-java-${MCJVER}.tar.gz${NC}"
