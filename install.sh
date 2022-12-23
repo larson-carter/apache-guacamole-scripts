@@ -304,9 +304,9 @@ export DEBIAN_FRONTEND=noninteractive
 
 # Fix Ubuntu 22.04 SSL Issue
 sudo apt purge openssl -y
-wget https://www.openssl.org/source/old/1.1.1/openssl-1.1.1q.tar.gz --no-check-certificate -P ~
-sudo tar -zxf openssl-1.1.1q.tar.gz
-cd ~/openssl-1.1.1q
+wget https://www.openssl.org/source/old/1.1.1/openssl-1.1.1q.tar.gz --no-check-certificate -P ~/media
+sudo tar -zxf ~/media/openssl-1.1.1q.tar.gz
+cd ~/media/openssl-1.1.1q
 sudo ./config
 sudo make
 sudo make install
